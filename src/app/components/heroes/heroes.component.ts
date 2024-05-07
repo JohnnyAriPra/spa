@@ -1,23 +1,30 @@
 import { Component } from '@angular/core';
-import { HeroesService } from '../../services/heroes.service';
+import { HeroesService, Heroe } from '../../services/heroes.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.css'
 })
+
 export class HeroesComponent {
-  heroes:any[]=[  ];
+  heroes:Heroe[]=[];
 
-  constructor(private _HeroeService:HeroesService){
-
+  constructor(private _heroesService:HeroesService, private router:Router){
+        //console.log("constructor");
   }
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    this.heroes=this._HeroeService.getHeroes();
-    console.log(this.heroes);
+    this.heroes=this._heroesService.getHeroes();
+    //console.log(this.heroes);
+
+  }
+
+  verHeroe(idx:number){
+    this.router.navigate( ['/heroe', idx] );
+  
   }
 
 }
