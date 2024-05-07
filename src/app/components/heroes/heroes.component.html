@@ -10,24 +10,20 @@
 <div class="row row-cols-4">
 
     <div class="col animated fadeIn fast" *ngFor="let heroe of heroes; let i=index">      
+      
       <div class="card mb-3">
         <img src="{{heroe.img}}" class="card-img-top" alt="{{heroe.nombre}}">
-        <div class="card-body">
+        
+        <div class="card-body text">
           <h5 class="card-title animate__animated animate__backInDown">{{ heroe.nombre }}</h5>
           <p class="card-text">{{ heroe.bio }}</p>
           <p class="card-text"><small class="text-body-secondary">{{ heroe.aparicion }}</small></p>
          
-         <button (click)="verHeroe(i)"
-         type="button" class="btn btn-outline-primary btn-block">Ver mas
-         </button> 
-
-          <!--  <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary">Ver mas link...</a>-->
-
-
+          <div class="d-grid gap-2">
+            <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary">Ver mas </button> 
+            <!--  <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary">Ver mas link...</a>-->
+          </div>
         </div>
       </div>
     </div>
-
-   
-
 </div>

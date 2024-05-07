@@ -1,12 +1,22 @@
-<h1 class="animated fadeIn"> {{ heroe.nombre | uppercase}} <small> ({{ heroe.aparicion | date:'y' }}) </small></h1>
-<hr>
+
+
+<div class="container">
+
+    <h1 class="animated fadeIn"> {{ heroe.nombre | uppercase}} <small> ({{ heroe.aparicion | date:'y' }}) </small></h1>
+    <hr>
 
 <div class="row animated fadeIn fast">
-    <div class="col-md-4">
-        <img src="{{ heroe.img }}" class="img-fluid" alt="{{ heroe.nombre }}">
+    <div class="card w-50 col">
+
+        <div class="card-body">
+            <img src="{{ heroe.img }}" class="img-fluid animate__animated animate__flipInX" alt="{{ heroe.nombre }}">
         <br><br>
-        <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block">Regresar</a>
+            <div class="d-grid gap-2">
+                <a [routerLink]="['/heroes']" class="btn btn-danger btn-block">Regresar</a>
+            </div>
+        </div>
     </div>
+
 
     <div class="col-md-8">
         <h3>{{ heroe.nombre }}</h3>
@@ -19,5 +29,7 @@
             <img *ngIf="heroe.casa =='DC'" class="img-logo" src="assets/img/DC_Comics_logo.png" alt="DC">
         </div>
     </div>
+
+</div>
 
 </div>

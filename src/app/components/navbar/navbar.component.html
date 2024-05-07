@@ -28,7 +28,7 @@
         </li>
       </ul>
       
-      <form class="d-flex" role="search">
+      <form class="d-flex" (submit)="$event.preventDefault()" role="search">
         <input class="form-control me-2" type="text" placeholder="Buscar Heroe" (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>
         <button (click)="buscarHeroe(buscarTexto.value)"
           class="btn btn-outline-primary btn-block" type="button">Buscar
