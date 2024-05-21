@@ -63,9 +63,94 @@ export class HeroesService {
     
   ];
 
+  private vehiculos:Vehiculo[]=
+  [
+    {
+      placa: "ABC123",
+      marca: "MAZDA",
+      matenimiento: "aceite motor",
+      anio: 2010,
+      color:"rojo"
+    },
+    {
+      placa: "ABC456",
+      marca: "KIA",
+      matenimiento: "cambio llantas",
+      anio: 2022,
+      color:"negro"
+    },
+    {
+      placa: "OAA123",
+      marca: "CHEVROLET",
+      matenimiento: "aceite caja de transmision",
+      anio: 2015,
+      color:"blanco"
+    },
+    {
+      placa: "PAC778",
+      marca: "KIA",
+      matenimiento: "cambio de llantas",
+      anio: 2021,
+      color:"azul"
+    },
+    {
+      placa: "TBG111",
+      marca: "TOYOTA",
+      matenimiento: "lavada",
+      anio: 2023,
+      color:"negro"
+    },
+    {
+      placa: "OBC123",
+      marca: "RENAULT",
+      matenimiento: "abc de frenos",
+      anio: 2010,
+      color:"rojo"
+    },
+    {
+      placa: "ABC123",
+      marca: "MAZDA",
+      matenimiento: "aceite caja",
+      anio: 2010,
+      color:"rojo"
+    },
+    {
+      placa: "PBC555",
+      marca: "TOYOTA",
+      matenimiento: "reparación motor",
+      anio: 2010,
+      color:"blaco"
+    },
+    {
+      placa: "ABC123",
+      marca: "MAZDA",
+      matenimiento: "cambio de llantas",
+      anio: 2010,
+      color:"rojo"
+    },
+    {
+      placa: "PBC333",
+      marca: "KIA",
+      matenimiento: "limpieza de inyectores",
+      anio: 2009,
+      color:"naranja"
+    }
+  ];
+
   getHeroes():Heroe[]{
     return this.heroes;
   }
+
+  getVehiculos():Vehiculo[]{
+    return this.vehiculos;
+  }
+
+  ordenar():Vehiculo[]{
+  return this.vehiculos.sort((a, b) => b.anio - a.anio);
+}
+
+
+
 
   getHeroe(idx: number){
     return this.heroes[idx];
@@ -84,10 +169,31 @@ export class HeroesService {
 
   }
 
+  buscarVehiculos(termino:string):Vehiculo[]{
+    let VehiculosArr:Vehiculo[] = [];
+    termino = termino.toLowerCase();
+    for(let v of this.vehiculos){
+      let matenimiento = v.matenimiento.toLowerCase();
+      if(matenimiento.indexOf(termino) >=0){
+        VehiculosArr.push(v)
+      }
+    }
+    return VehiculosArr;
+
+  }
+
 
 
 }
 
+
+export interface Vehiculo{
+  placa: string,
+  marca: string,
+  matenimiento: string,
+  anio: number,
+  color: string;
+}
 
 export interface Heroe{
   nombre: string;

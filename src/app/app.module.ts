@@ -16,6 +16,10 @@ import { HeroeComponent } from './components/heroe/heroe.component';
 //SERVICIOS
 import { HeroesService } from './services/heroes.service';
 import { BuscadorComponent } from './components/buscador/buscador.component';
+import { TodosvehiculosComponent } from './components/todosvehiculos/todosvehiculos.component';
+import { VehiculomasmantComponent } from './components/vehiculomasmant/vehiculomasmant.component';
+import { VehiculoporanioComponent } from './components/vehiculoporanio/vehiculoporanio.component';
+import { MarcamaspopularComponent } from './components/marcamaspopular/marcamaspopular.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
     HeroesComponent,
     FooterComponent,
     HeroeComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    TodosvehiculosComponent,
+    VehiculomasmantComponent,
+    VehiculoporanioComponent,
+    MarcamaspopularComponent
   ],
   imports: [
     BrowserModule,

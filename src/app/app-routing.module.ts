@@ -5,6 +5,12 @@ import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
+import {TodosvehiculosComponent} from './components/todosvehiculos/todosvehiculos.component';
+import {VehiculomasmantComponent} from './components/vehiculomasmant/vehiculomasmant.component';
+import { VehiculoporanioComponent } from './components/vehiculoporanio/vehiculoporanio.component';
+import { MarcamaspopularComponent } from './components/marcamaspopular/marcamaspopular.component';
+
+
 
 
 const routes: Routes = [
@@ -13,7 +19,12 @@ const routes: Routes = [
   {path:'heroes', component:HeroesComponent},
   {path:'heroe/:id', component:HeroeComponent},
   {path:'buscar/:termino', component:BuscadorComponent},
-  {path: '**', pathMatch: 'full', redirectTo:'home'}
+  {path:'todosvehiculos', component:TodosvehiculosComponent},
+  {path:'vehiculomasmant', component:VehiculomasmantComponent},
+  {path:'vehiculoporanio', component:VehiculoporanioComponent},
+  {path:'marcamaspopular', component: MarcamaspopularComponent},
+
+  {path: '**', pathMatch: 'full', redirectTo:'todosvehiculos'}
 ];
 
 @NgModule({
