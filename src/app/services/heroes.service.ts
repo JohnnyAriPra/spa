@@ -137,6 +137,84 @@ export class HeroesService {
     }
   ];
 
+
+  private rutas:Ruta[]=
+  [
+    {
+      origen: "Pasaje",
+      destino: "Machala",
+      precio: 10,
+      descripcion: "Viaje comodo desde Pasaje a la ciudad de Machala",
+      tipo:"Interno"
+    },
+    {
+      origen: "Guayaquil",
+      destino: "Cuenca",
+      precio: 40,
+      descripcion: "Viaje comodo desde Guayaquil a la ciudad de Cuenca",
+      tipo:"Interno"
+    },
+    {
+      origen: "Manta",
+      destino: "Salinas",
+      precio: 30,
+      descripcion: "Viaje comodo desde Manta a la ciudad de Salinas",
+      tipo:"Interno"
+    },
+    {
+      origen: "Esmeraldas",
+      destino: "Manabi",
+      precio: 30,
+      descripcion: "Viaje comodo desde Esmeraldas a la ciudad de Manabi",
+      tipo:"Interno"
+    },
+    {
+      origen: "Loja",
+      destino: "Napo",
+      precio: 30,
+      descripcion: "Viaje comodo desde Loja a la ciudad de Napo",
+      tipo:"Interno"
+    },
+    {
+      origen: "Zamora",
+      destino: "Pinas",
+      precio: 30,
+      descripcion: "Viaje comodo desde Zamora a la ciudad de Pinas",
+      tipo:"Interno"
+    },
+    {
+      origen: "Machala",
+      destino: "Pasaje",
+      precio: 10,
+      descripcion: "Viaje comodo desde Machala a la ciudad de Pasaje",
+      tipo:"Interno"
+    },
+    {
+      origen: "Morona",
+      destino: "Quito",
+      precio: 50,
+      descripcion: "Viaje comodo desde Morona a la ciudad de Quito",
+      tipo:"Interno"
+    },
+    {
+      origen: "Quito",
+      destino: "Machala",
+      precio: 60,
+      descripcion: "Viaje comodo desde Quito a la ciudad de Machala",
+      tipo:"Interno"
+    },
+    {
+      origen: "Machala",
+      destino: "Peru",
+      precio: 100,
+      descripcion: "Viaje comodo desde Machala a la ciudad de Peru",
+      tipo:"Externo"
+    }
+  ];
+
+
+
+
   getHeroes():Heroe[]{
     return this.heroes;
   }
@@ -145,11 +223,18 @@ export class HeroesService {
     return this.vehiculos;
   }
 
+  getRutas():Ruta[]{
+    return this.rutas;
+  }
   ordenar():Vehiculo[]{
   return this.vehiculos.sort((a, b) => b.anio - a.anio);
 }
 
 
+
+getRuta(idx: number){
+  return this.rutas[idx];
+}
 
 
   getHeroe(idx: number){
@@ -183,6 +268,22 @@ export class HeroesService {
   }
 
 
+  buscarRutas(termino:string):Ruta[]{
+    let rutasArr:Ruta[] = [];
+    termino = termino.toLowerCase();
+    for(let ru of this.rutas){
+      let origen = ru.origen.toLowerCase();
+      let destino = ru.destino.toLowerCase();
+      if(origen.indexOf(termino) >=0 || destino.indexOf(termino) >=0){
+        rutasArr.push(ru)
+      }
+    }
+    return rutasArr;
+
+  }
+
+
+
 
 }
 
@@ -201,5 +302,14 @@ export interface Heroe{
   img: string;
   aparicion: string;
   casa: string;
+};
+
+
+export interface Ruta{
+  origen: string;
+  destino: string;
+  precio: number;
+  descripcion: string;
+  tipo: string;
 };
 

@@ -18,28 +18,33 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['todosvehiculos']" routerLinkActive="active">Todos</a>
+          <a class="nav-link" [routerLink]="['rutas']" routerLinkActive="active">Rutas Todas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  [routerLink]="['vehiculomasmant']" routerLinkActive="active">Mas Mantenimiento</a>
+          <a class="nav-link" [routerLink]="['interno']" routerLinkActive="active">Rutas Interno</a>
         </li>
         <li class="nav-item">
-                <a class="nav-link" [routerLink]="['vehiculoporanio']" routerLinkActive="active">Por año</a>
+          <a class="nav-link" [routerLink]="['externo']" routerLinkActive="active">Rutas Externo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['marcamaspopular']" routerLinkActive="active">Mas Popular</a>
-         </li>
+          <a class="nav-link"  [routerLink]="['quienessomos']" routerLinkActive="active">Quienes Somos</a>
+        </li>
+        
          <li class="nav-item">
           <a class="nav-link" [routerLink]="['protegida']" routerLinkActive="active">Protegida</a>
          </li>
       </ul>
       
-      <form class="d-flex" (submit)="$event.preventDefault()" role="search">
-        <input class="form-control me-2" type="text" placeholder="Buscar Vehiculo" (keyup.enter)="buscarVehiculo(buscarTexto.value)" #buscarTexto>
-        <button (click)="buscarVehiculo(buscarTexto.value)"
-          class="btn btn-outline-primary btn-block" type="button">Buscar
-        </button>
-      </form>
+      <ng-container *ngIf="auth.user$ | async as profile" >
+        <form class="d-flex" (submit)="$event.preventDefault()" role="search">
+          <input class="form-control me-2" type="text" placeholder="Buscar Vehiculo" (keyup.enter)="buscarVehiculo(buscarTexto.value)" #buscarTexto>
+          <button (click)="buscarVehiculo(buscarTexto.value)"
+            class="btn btn-outline-primary btn-block" type="button">Buscar
+          </button>
+        </form>
+      </ng-container>
+      
+      
       
       <h6 *ngIf="auth.user$ | async as profile" style="color: aliceblue;"> {{profile.name}} </h6>
       <form class="d-flex" role="search">

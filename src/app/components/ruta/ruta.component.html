@@ -1,0 +1,35 @@
+
+
+<div class="container">
+
+    <h1 class="animated fadeIn"> ORIGEN: {{ ruta.origen | uppercase}} <small> - DESTINO: {{ ruta.destino }} </small></h1>
+    <hr>
+
+<div class="row animated fadeIn fast">
+    <div class="card w-50 col">
+
+        <div class="card-body">
+        <br><br>
+            <div class="d-grid gap-2">
+                <a [routerLink]="['/rutas']" class="btn btn-danger btn-block">Regresar</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-8">
+        <h3> PRECIO: $ {{ ruta.precio }}</h3>
+        <hr>
+        <p>
+            TIPO: {{ ruta.tipo }}
+        </p>
+
+        <p>
+            DESCRIPCION DE LA RUTA: {{ ruta.descripcion }}
+        </p>
+       
+    </div>
+
+</div>
+
+</div>

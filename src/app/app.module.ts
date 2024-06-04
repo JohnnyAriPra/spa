@@ -23,6 +23,12 @@ import { VehiculoporanioComponent } from './components/vehiculoporanio/vehiculop
 import { MarcamaspopularComponent } from './components/marcamaspopular/marcamaspopular.component';
 import { AuthModule } from '@auth0/auth0-angular';
 import { ProtegidaComponent } from './components/protegida/protegida.component';
+import { RutasComponent } from './components/rutas/rutas.component';
+import { QuienessomosComponent } from './components/quienessomos/quienessomos.component';
+import { RutaComponent } from './components/ruta/ruta.component';
+import { InternoComponent } from './components/interno/interno.component';
+import { ExternoComponent } from './components/externo/externo.component';
+import { TodasrutasComponent } from './components/todasrutas/todasrutas.component';
 
 
 @NgModule({
@@ -39,7 +45,13 @@ import { ProtegidaComponent } from './components/protegida/protegida.component';
     VehiculomasmantComponent,
     VehiculoporanioComponent,
     MarcamaspopularComponent,
-    ProtegidaComponent
+    ProtegidaComponent,
+    RutasComponent,
+    QuienessomosComponent,
+    RutaComponent,
+    InternoComponent,
+    ExternoComponent,
+    TodasrutasComponent
   ],
   imports: [
     BrowserModule,

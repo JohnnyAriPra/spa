@@ -11,6 +11,12 @@ import { VehiculoporanioComponent } from './components/vehiculoporanio/vehiculop
 import { MarcamaspopularComponent } from './components/marcamaspopular/marcamaspopular.component';
 import { ProtegidaComponent } from './components/protegida/protegida.component';
 import { authGuard } from './guards/auth.guard';
+import { RutasComponent } from './components/rutas/rutas.component';
+import { QuienessomosComponent } from './components/quienessomos/quienessomos.component';
+import { RutaComponent } from './components/ruta/ruta.component';
+import { ExternoComponent } from './components/externo/externo.component';
+import { InternoComponent } from './components/interno/interno.component';
+import { TodasrutasComponent } from './components/todasrutas/todasrutas.component';
 
 
 
@@ -27,9 +33,15 @@ const routes: Routes = [
   {path:'vehiculoporanio', component:VehiculoporanioComponent},
   {path:'marcamaspopular', component: MarcamaspopularComponent},
   {path:'protegida', component: ProtegidaComponent, canActivate: [authGuard]},
+  {path: 'rutas', component: RutasComponent},
+  {path:'quienessomos', component: QuienessomosComponent},
+  {path:'ruta/:id', component: RutaComponent},
+  {path:'externo', component: ExternoComponent},
+  {path:'interno', component: InternoComponent},
+  {path:'todasrutas', component: TodasrutasComponent},
 
-  {path: '', pathMatch: 'full', redirectTo:'todosvehiculos'},
-  {path: '**', pathMatch: 'full', redirectTo:'todosvehiculos'}
+  {path: '', pathMatch: 'full', redirectTo:'rutas'},
+  {path: '**', pathMatch: 'full', redirectTo:'rutas'}
 ];
 
 @NgModule({

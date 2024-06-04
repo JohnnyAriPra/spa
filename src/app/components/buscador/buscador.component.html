@@ -1,6 +1,6 @@
 <div class="row row-cols-4 animated fadeIn fast">
   <h1>
-    VEHICULOS <small>Todos</small>
+    RUTAS <small>Todas</small>
   </h1>
 </div>
 
@@ -8,18 +8,21 @@
 
   
 <div class="row row-cols-3" >
-<ng-container *ngFor="let v of vehiculos; let i=index">
+<ng-container *ngFor="let ru of rutas; let i=index">
 
     <div class="col">      
       <div class="card mb-3">
         <div class="card-body">
-          <h5 class="card-title animate__animated animate__backInDown">{{ v.marca }}</h5>
-          <p class="card-text">{{ v.placa }}</p>
-            <p class="card-text">{{ v.color }}</p>
-            <p class="card-text">{{ v.matenimiento }}</p>
-          <p class="card-text"><small class="text-body-secondary">{{ v.anio }}</small></p>
-       
+          <h5 class="card-title animate__animated animate__backInDown">ORIGEN: {{ ru.origen }}</h5>
+          <p class="card-text">DESTINO: {{ ru.destino }}</p>
+            <p class="card-text">PRECIO: $ {{ ru.precio }}</p>
+          <p class="card-text"><small class="text-body-secondary">{{ ru.tipo }}</small></p>
         </div>
+        <div class="d-grid gap-2">
+          <button (click)="verRuta(i)" type="button" class="btn btn-outline-primary">Ver mas descripcion</button> 
+          <!--  <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary">Ver mas link...</a>-->
+        </div>
+
       </div>
     </div>
 </ng-container>   
