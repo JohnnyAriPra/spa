@@ -9,6 +9,9 @@ import {TodosvehiculosComponent} from './components/todosvehiculos/todosvehiculo
 import {VehiculomasmantComponent} from './components/vehiculomasmant/vehiculomasmant.component';
 import { VehiculoporanioComponent } from './components/vehiculoporanio/vehiculoporanio.component';
 import { MarcamaspopularComponent } from './components/marcamaspopular/marcamaspopular.component';
+import { ProtegidaComponent } from './components/protegida/protegida.component';
+import { authGuard } from './guards/auth.guard';
+
 
 
 
@@ -23,7 +26,9 @@ const routes: Routes = [
   {path:'vehiculomasmant', component:VehiculomasmantComponent},
   {path:'vehiculoporanio', component:VehiculoporanioComponent},
   {path:'marcamaspopular', component: MarcamaspopularComponent},
+  {path:'protegida', component: ProtegidaComponent, canActivate: [authGuard]},
 
+  {path: '', pathMatch: 'full', redirectTo:'todosvehiculos'},
   {path: '**', pathMatch: 'full', redirectTo:'todosvehiculos'}
 ];
 

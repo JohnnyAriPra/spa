@@ -1,0 +1,19 @@
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-container img {
+    max-width: 100px; /* Ajusta el tamaño de la imagen según sea necesario */
+    border-radius: 30%; /* Hace la imagen redonda si es cuadrada */
+    margin-bottom: 10px;
+  }
+  
+    .profile-text {
+    text-align: center; /* Asegura que los textos estén centrados */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+  }

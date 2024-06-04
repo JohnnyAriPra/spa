@@ -29,6 +29,9 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['marcamaspopular']" routerLinkActive="active">Mas Popular</a>
          </li>
+         <li class="nav-item">
+          <a class="nav-link" [routerLink]="['protegida']" routerLinkActive="active">Protegida</a>
+         </li>
       </ul>
       
       <form class="d-flex" (submit)="$event.preventDefault()" role="search">
@@ -36,6 +39,12 @@
         <button (click)="buscarVehiculo(buscarTexto.value)"
           class="btn btn-outline-primary btn-block" type="button">Buscar
         </button>
+      </form>
+      
+      <h6 *ngIf="auth.user$ | async as profile" style="color: aliceblue;"> {{profile.name}} </h6>
+      <form class="d-flex" role="search">
+        <button class="btn btn-danger" *ngIf="!(auth.isAuthenticated$ | async)" (click)="login()">Login</button>
+        <button class="btn btn-primary" *ngIf="(auth.isAuthenticated$ | async)" (click)="logout()">Logout</button>
       </form>
 
     </div>
